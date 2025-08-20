@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/tetris/tetris.css" />
+    <title>Tetris</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Jersey+15&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/2273515c74.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer type="module" src="/tetris/tetris.js"></script>
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <!-- Mobile top bar -->
+
+    <div
+      class="mobileTopBar border-b-4 border-blue-900 relative z-30 bg-blue-900 flex justify-center gap-5 font-bold text-md py-4 sm:hidden"
+    >
+      <div>
+        <div class="mini-grid z-40 mt-5">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <!-- Start/pause button for mobile -->
+
+        <div
+          class="absolute -bottom-4 z-50 flex flex-col items-center mt-4 sm:hidden"
+        >
+          <button
+            class="bg-slate-950 rounded-md px-2 py-1 border-2 border-blue-900 text-gray-100 hover:text-red-200 hover:scale-95 transition-transform duration-150 ease-in-out sm:py-3"
+            id="start2"
+          >
+            <i class="fa-solid fa-pause fa-sm"></i>
+            <i
+              class="fa-solid fa-slash fa-rotate-by fa-sm"
+              style="--fa-rotate-angle: 220deg"
+            ></i>
+            <i class="fa-solid fa-play fa-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="score scoreText w-28 font-bold text-[16px] text-cyan-50">
+        <div
+          class="score1 py-1 border-2 border-blue-900 mb-2 text-center rounded-lg"
+        >
+          <p>Score: <span id="score2">0</span></p>
+        </div>
+
+        <div
+          class="score1 py-1 border-2 border-blue-900 mb-2 text-center rounded-lg"
+        >
+          <p>Level: <span id="level2">1</span></p>
+        </div>
+        <div
+          class="score1 py-1 border-2 border-blue-900 mb-2 text-center rounded-lg"
+        >
+          <p class="linesText">Lines: <span id="lines2">0</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hidden mx-auto justify-center my-10 sm:flex">
+      <img
+        src="/images/The_Tetris_Company_logo.png"
+        alt="Tetris_Logo"
+        width="391"
+        height="128"
+      />
+    </div>
+
+    <!-- GameBoard -->
+
+    <div class="gameBackground mx-auto sm:justify-center sm:inline-flex p-8">
+      <div
+        class="gameContainer relative flex flex-col justify-center items-center"
+      >
+        <div id="gameBoard" class="grid"></div>
+
+        <div class="levelText hidden absolute flex-col text-gray-100 text-xl">
+          <p class="slide-from-left text-center">Level</p>
+          <p class="slide-from-right text-center">Completed</p>
+        </div>
+
+        <div class="gameEnd hidden absolute text-gray-100 text-xl">
+          <p class="slide-from-left text-center">Game Over</p>
+        </div>
+
+        <div
+          class="menu2 hidden absolute left-1/2 translate-x-[-50%] top-[60%]"
+        >
+          <a href="./index.html">
+            <button
+              class="bg-slate-950 rounded-md p-3 text-gray-100 text-md shadow-lg border-2 border-blue-900 shadow-blue-950 font-semibold hover:text-blue-600 hover:scale-95 transition-transform duration-150 ease-in-out sm:py-3"
+            >
+              MENU
+              <i class="slide-from-right fa-solid fa-angles-right"></i>
+            </button>
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden sm:flex sm:flex-col ml-5">
+        <div class="mini-grid">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+
+        <!-- Score, Level Time for PC -->
+
+        <div
+          class="score hidden sm:flex sm:flex-col font-bold text-md text-cyan-50 w-32 mt-16"
+        >
+          <div
+            class="score1 p-2 border-2 border-blue-900 mb-2 text-center rounded-lg"
+          >
+            <h3 class="linesText">Lines: <span id="lines2">0</span></h3>
+          </div>
+
+          <div
+            class="score1 p-2 border-2 border-blue-900 mb-2 text-center rounded-lg"
+          >
+            <h3 class="scoreText">Score: <span id="score2">0</span></h3>
+          </div>
+
+          <div
+            class="score1 p-2 border-2 border-blue-900 mb-2 text-center rounded-lg"
+          >
+            <p class="levelText">Level: <span id="level2">1</span></p>
+          </div>
+        </div>
+        <div
+          id="performance"
+          class="hidden score1 text-xs w-[155px] border-blue-900 rounded-lg text-yellow-300 padding-2 p-2 border-2"
+        >
+          <p>FPS: <span id="fpsCounter">0</span></p>
+          <p>Frame Time: <span id="frameTime">0</span> ms</p>
+          <p>Memory: <span id="memory">0</span> MB</p>
+          <p>Logic: <span id="logic">0</span></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- All the buttons -->
+
+    <div
+      class="container hidden sm:flex flex-col justify-center items-center button mx-auto gap-5 mt-8 sm:flex-row"
+    >
+      <div>
+        <button
+          class="bg-slate-950 rounded-md px-5 py-5 text-gray-100 text-xl shadow-md shadow-blue-950 border-2 border-blue-950 font-semibold hover:text-blue-600 hover:scale-95 transition-transform duration-150 ease-in-out sm:py-3"
+          id="start"
+        >
+          Start/Pause
+        </button>
+        <a href="/index.html">
+          <button
+            class="menu bg-slate-950 rounded-md px-5 py-5 text-gray-100 text-xl shadow-md shadow-blue-950 border-2 border-blue-950 font-semibold hover:text-blue-600 hover:scale-95 transition-transform duration-150 ease-in-out sm:py-3"
+          >
+            MENU
+          </button>
+        </a>
+      </div>
+      <div class="flex justify-center items-center gap-2">
+        <label for="volume-control"
+          ><i class="fa-solid fa-volume-high" style="color: #f7fafc"></i>
+        </label>
+        <input
+          id="volumeControl"
+          type="range"
+          min="0"
+          max="1"
+          step="0.01"
+          value="1"
+        />
+      </div>
+    </div>
+
+    <!-- Game music -->
+
+    <audio id="backgroundMusic" src="/tetris/music/Tetris.mp3" loop></audio>
+
+    <audio id="full" src="/tetris/music/small-rock-break-194553.mp3"></audio>
+
+    <audio
+      id="gameVoice"
+      src="/tetris/music/zapsplat_human_male_voice_says_game_over_001_15726.mp3"
+    ></audio>
+
+    <audio id="levelChange" src="/tetris/music/SEP_levelchange.wav"></audio>
+
+    <audio id="gameEndMusic" src="/tetris/music/SEP_gameover.wav"></audio>
+
+    <audio id="tetris" src="/tetris/music/SEP_tetris.wav"></audio>
+
+    <audio id="hit" src="/tetris/music/SEB_fall.wav"></audio>
+  </body>
+</html>
