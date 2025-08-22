@@ -5,10 +5,25 @@ body {
   overscroll-behavior: none; /* Prevent pull-to-refresh */
 }
 
+.fontPrimary {
+  font-family: "Russo One", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#leaderboard-list li {
+  border: 2px solid white;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 .gameBackground {
   border-radius: 10px;
   border: #09205f 5px solid;
-  background-image: url("./images/Tetris_tile_background.webp");
+  background-image: url("../images/Tetris_tile_background.webp");
   background-size: cover;
 }
 
@@ -17,7 +32,6 @@ body {
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  background: linear-gradient(50deg, #020617, #333333);
   position: relative;
   animation: glow 2s infinite;
   transition: box-shadow 0.5s ease;
@@ -41,11 +55,6 @@ body {
   margin-left: 15px;
 }
 
-.checkStats,
-.score1 {
-  background: linear-gradient(50deg, #020617, #333333);
-}
-
 .tetromino {
   background-color: blue;
   border: 1px solid;
@@ -58,26 +67,9 @@ body {
   box-shadow: inset 3px 3px 7px rgba(255, 255, 255, 0.267);
 }
 
-.mini-grid {
-  width: 80px;
-  height: 80px;
-  display: flex;
-  flex-wrap: wrap;
-  background: linear-gradient(50deg, #020617, #333333);
-  outline: 3px solid rgb(30, 58, 138);
-}
-
 .mini-grid div {
   width: 20px;
   height: 20px;
-}
-
-.mobileTopBar {
-  background-color: #000c3d;
-}
-
-.leaderboard {
-  background: linear-gradient(50deg, #020617, #333333);
 }
 
 .leaderboard li {
@@ -86,16 +78,6 @@ body {
   border: 2px solid white;
   border-radius: 10px;
   margin-bottom: 10px;
-}
-
-.menuStartBtn,
-.leaderboard,
-.levelMenu,
-.movementMenu {
-  background: linear-gradient(50deg, #020617, #333333);
-  font-family: "Russo One", serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 input[type="range"] {
@@ -114,22 +96,6 @@ input[type="range"]:active::-webkit-slider-thumb {
 .button-disabled {
   pointer-events: none;
   opacity: 0.5;
-}
-
-.performanceMenuText,
-#performance,
-.menu2,
-.menu,
-.gameEnd,
-.nextLevelButton,
-.scoreText,
-.levelText,
-.timeText,
-.linesText,
-#start {
-  font-family: "Russo One", serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 /* Animations */
@@ -218,23 +184,11 @@ input[type="range"]:active::-webkit-slider-thumb {
 
 /* Breakpoint for gameboard mobile */
 
-@media (max-width: 425px) {
-  .levelMenu,
-  .movementMenu {
-    font-size: 16px;
-  }
-
-  .menuStartBtn {
-    font-size: 25px;
-  }
-}
-
 @media (max-width: 640px) {
   .gameBackground {
     width: 100vw;
     height: 100vh;
     border-radius: 0;
     border: 0;
-    top: -200px;
   }
 }

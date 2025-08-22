@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Tetris game menu with options and leaderboard"
+    />
     <link rel="stylesheet" href="/css/main.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&family=Russo+One&display=swap"
@@ -15,10 +19,12 @@
     ></script>
     <script defer type="module" src="/menu.js"></script>
   </head>
-  <body class="bg-slate-950">
+  <body class="bg-slate-950 fontPrimary">
     <!-- Tetris image -->
 
-    <div class="flex flex-col gap-7 items-center justify-center max-w-lg mx-auto px-5">
+    <div
+      class="flex flex-col gap-7 items-center justify-center max-w-lg mx-auto px-5"
+    >
       <img
         class="my-10"
         src="/images/The_Tetris_Company_logo.png"
@@ -26,16 +32,15 @@
         width="391"
         height="128"
       />
+
       <!-- Start game button -->
 
-   
-        <a
-          class="menuStartBtn w-full p-5 text-center rounded-md text-gray-100 text-2xl shadow-md shadow-blue-950 border-2 border-blue-950 hover:text-blue-600 hover:scale-105 transition-transform duration-150 ease-in-out"
-          href="/tetris/tetris.html"
-        >
-          START GAME
-        </a>
-
+      <a
+        class="w-full p-5 text-center rounded-md text-gray-100 text-2xl shadow-md bg-slate-900 shadow-blue-950 border-2 border-blue-950 hover:text-blue-600 hover:scale-105 transition-transform duration-150 ease-in-out"
+        href="/tetris"
+      >
+        START GAME
+      </a>
 
       <div id="performanceStats" class="items-center hidden sm:flex">
         <label
@@ -44,102 +49,105 @@
         >
           <input type="checkbox" id="toggleSwitch" class="peer hidden" />
           <div
-            class="checkStats relative w-8 h-8 border-4 border-blue-950 rounded-md active:scale-90"
+            class="bg-gradient-to-tr from-slate-950 to-slate-900 relative w-8 h-8 border-4 border-blue-950 rounded-md active:scale-90"
           ></div>
           <img
             class="absolute w-8 h-8 hidden peer-checked:block"
             src="/images/Done.svg"
             alt="check"
           />
-          <p class="performanceMenuText text-gray-100">
-            Show Performance Stats
-          </p>
+          <p class="text-gray-100">Show Performance Stats</p>
         </label>
       </div>
 
       <!-- Momevement quide -->
 
       <div
-        class="movementMenu flex flex-col gap-5 p-5 text-gray-100 text-xl font-medium rounded-lg border-2 border-gray-100 w-full"
+        class="bg-gradient-to-tr from-slate-950 to-slate-900 p-5 text-gray-100 text-xl rounded-lg border-2 border-gray-100 w-full"
       >
-        <h2 class="font-bold">Movement PC / Mobile</h2>
-        <div class="flex flex-row items-center">
-          <p>Left:</p>
-          <i class="fa-solid fa-arrow-left pl-4"></i>
-          <p class="px-2">/</p>
-          <p>Swipe left</p>
-        </div>
-        <div class="flex flex-row items-center">
-          <p>Right:</p>
-          <i class="fa-solid fa-arrow-right pl-4"></i>
-          <p class="px-2">/</p>
-          <p>Swipe right</p>
-        </div>
-        <div class="flex flex-row items-center">
-          <p>Down:</p>
-          <i class="fa-solid fa-arrow-down pl-5"></i>
-          <p class="px-2">/</p>
-          <p>Swipe down</p>
-        </div>
-        <div class="flex flex-row items-center">
-          <p>Rotate:</p>
-          <i class="fa-solid fa-arrow-up pl-5"></i>
-          <p class="px-2">/</p>
-          <p>Tap screen</p>
-        </div>
-        <div class="flex flex-col self-start sm:flex-row items-center">
-          <p>Hard-drop: Shift /</p>
-          <p class="sm:ml-2">Quick swipe down</p>
+        <h2 class="underline mb-5">Movement PC / Mobile</h2>
+        <div class="flex flex-col gap-5 text-base">
+          <div class="flex flex-row items-center">
+            <p>Left:</p>
+            <i class="fa-solid fa-arrow-left pl-4"></i>
+            <p class="px-2">/</p>
+            <p>Swipe left</p>
+          </div>
+          <div class="flex flex-row items-center">
+            <p>Right:</p>
+            <i class="fa-solid fa-arrow-right pl-4"></i>
+            <p class="px-2">/</p>
+            <p>Swipe right</p>
+          </div>
+          <div class="flex flex-row items-center">
+            <p>Down:</p>
+            <i class="fa-solid fa-arrow-down pl-5"></i>
+            <p class="px-2">/</p>
+            <p>Swipe down</p>
+          </div>
+          <div class="flex flex-row items-center">
+            <p>Rotate:</p>
+            <i class="fa-solid fa-arrow-up pl-5"></i>
+            <p class="px-2">/</p>
+            <p>Tap screen</p>
+          </div>
+          <div class="flex flex-col self-start sm:flex-row items-center">
+            <p>Hard-drop: Shift /</p>
+            <p class="sm:ml-2">Quick swipe down</p>
+          </div>
         </div>
       </div>
 
       <!-- Score / Level  -->
 
       <div
-        class="levelMenu flex flex-col p-5 gap-5 text-gray-100 text-xl font-medium rounded-lg border-2 border-gray-100 w-full"
+        class="bg-gradient-to-tr from-slate-950 to-slate-900 p-5 text-gray-100 text-xl rounded-lg border-2 border-gray-100 w-full"
       >
-        <h2 class="font-bold">Score / Level</h2>
-        <div>
-          <p>Single Line Clear: 40 points</p>
-        </div>
-        <div>
-          <p>Double Line Clear: 100 points</p>
-        </div>
-        <div>
-          <p>Triple Line Clear: 300 points</p>
-        </div>
-        <div>
-          <p>Tetris Clear: (Clearing four lines at once) 1200 points</p>
-        </div>
-        <div>
-          <p>
-            Level Up: Clear 10 lines to reach the next level. Each level-up
-            requires clearing an additional 10 lines.
-          </p>
-        </div>
-        <div>
-          <p>
-            Tetrominoes fall faster with each level, increasing the challenge as
-            you advance. Level up to test your skills against quicker drops!
-          </p>
+        <h2 class="underline mb-5">Score / Level</h2>
+        <div class="flex flex-col gap-5 text-base">
+          <div>
+            <p>Single Line Clear: 40 points</p>
+          </div>
+          <div>
+            <p>Double Line Clear: 100 points</p>
+          </div>
+          <div>
+            <p>Triple Line Clear: 300 points</p>
+          </div>
+          <div>
+            <p>Tetris Clear: (Clearing four lines at once) 1200 points</p>
+          </div>
+          <div>
+            <p>
+              Level Up: Clear 10 lines to reach the next level. Each level-up
+              requires clearing an additional 10 lines.
+            </p>
+          </div>
+          <div>
+            <p>
+              Tetrominoes fall faster with each level, increasing the challenge
+              as you advance. Level up to test your skills against quicker
+              drops!
+            </p>
+          </div>
         </div>
       </div>
 
       <!-- Leaderboard list -->
 
       <div
-        class="leaderboard text-center rounded-xl text-gray-100 border-gray-100 border-2 shadow-md py-2 px-5 mb-10 w-full"
+        class="bg-gradient-to-tr from-slate-950 to-slate-900 text-center rounded-xl text-gray-100 border-gray-100 border-2 shadow-md py-2 px-5 mb-10 w-full"
       >
         <div class="flex flex-row justify-center items-center gap-5">
           <i class="fa-solid fa-crown fa-xl" style="color: #ffd43b"></i>
-          <h2 class="font-bold text-lg py-5">Leaderboard</h2>
+          <h2 class="text-xl py-5">Leaderboard</h2>
           <i class="fa-solid fa-crown fa-xl" style="color: #ffd43b"></i>
         </div>
         <ul id="leaderboard-list"></ul>
 
         <button
           id="clearLeaderboard"
-          class="text-slate-950 border-2 mt-5 mb-2 p-1 rounded-xl border-blue-200 bg-gray-200 hover:bg-gray-100 hover:scale-105"
+          class="text-slate-950 border-2 mt-5 mb-2 p-1 rounded-xl border-blue-200 bg-gray-200 hover:bg-gray-100 hover:scale-105 cursor-pointer"
         >
           Clear Leaderboard
         </button>

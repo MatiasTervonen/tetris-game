@@ -1,10 +1,5 @@
-function getLeaderboard() {
-  const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
-  return leaderboard;
-}
-
 function displayLeaderboard() {
-  const leaderboard = getLeaderboard();
+  const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
 
   const leaderboardList = document.getElementById("leaderboard-list");
 
